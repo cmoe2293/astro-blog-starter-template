@@ -1,24 +1,95 @@
 ---
+const agents = [
+  {
+    name: "Research Assistant",
+    slug: "research-agent",
+    description: "Searches the web and summarizes topics into reports.",
+    tags: ["OpenAI", "LangChain"],
+  },
+  {
+    name: "Customer Support Bot",
+    slug: "support-bot",
+    description: "Answers customer questions using a knowledge base.",
+    tags: ["RAG", "Pinecone"],
+  },
+  {
+    name: "Data Analysis Agent",
+    slug: "data-agent",
+    description: "Analyzes CSV files and generates insights.",
+    tags: ["Python", "Pandas"],
+  }
+];
 ---
 
 <html>
   <head>
-    <title>My AI Agents</title>
+    <title>Conor Moe | AI Agents</title>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #0f172a;
+        color: white;
+        margin: 0;
+        padding: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: white;
+        transition: 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        background: #334155;
+      }
+
+      .tags {
+        margin-top: 10px;
+      }
+
+      .tag {
+        background: #475569;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        margin-right: 5px;
+      }
+    </style>
   </head>
-  <body style="font-family: sans-serif; padding: 40px;">
+
+  <body>
     <h1>🤖 My AI Agents</h1>
 
-    <div>
-      <h2>Research Agent</h2>
-      <p>Summarizes articles and generates reports.</p>
-      <a href="#">Live Demo</a>
-    </div>
+    <div class="grid">
+      {agents.map(agent => (
+        <a href={`/agents/${agent.slug}`} class="card">
+          <h2>{agent.name}</h2>
+          <p>{agent.description}</p>
 
-    <div>
-      <h2>Chatbot Agent</h2>
-      <p>Handles customer support using RAG.</p>
-      <a href="#">GitHub</a>
+          <div class="tags">
+            {agent.tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))}
     </div>
-
   </body>
 </html>
