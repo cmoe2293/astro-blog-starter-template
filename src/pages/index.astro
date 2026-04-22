@@ -1,21 +1,21 @@
 ---
 const agents = [
   {
-    name: "Research Assistant",
-    slug: "research-agent",
-    description: "Searches the web and summarizes topics into reports.",
+    name: "Abacus Fantasy Golf Picker",
+    slug: "golf-picker",
+    description: "Deep dives historical results, current form, and course fit for each golfer in weekly field.",
     tags: ["OpenAI", "LangChain"],
   },
   {
-    name: "Customer Support Bot",
-    slug: "support-bot",
-    description: "Answers customer questions using a knowledge base.",
+    name: "Junk Email Screener",
+    slug: "email-screener",
+    description: "Reviews email inbox, scores emails, deletes emails with a junk score over threshold.",
     tags: ["RAG", "Pinecone"],
   },
   {
-    name: "Data Analysis Agent",
-    slug: "data-agent",
-    description: "Analyzes CSV files and generates insights.",
+    name: "Daily Christian Devotional",
+    slug: "daily-devotional",
+    description: "Provides daily devotional for study to email.",
     tags: ["Python", "Pandas"],
   }
 ];
@@ -75,7 +75,7 @@ const agents = [
   </head>
 
   <body>
-    <h1>🤖 My AI Agents</h1>
+    <h1>My AI Agents</h1>
 
     <div class="grid">
       {agents.map(agent => (
